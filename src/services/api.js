@@ -9,7 +9,7 @@ function getQueryString(queryParams) {
             .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
             .join('&')
     }
-    // Ternaire : condition ? valeurVrai : valeurFausse
+    
     if (queryString) {
         return `?${queryString}`
     }
@@ -21,7 +21,7 @@ function getUrl(path, queryParams) {
     return `${path}${getQueryString(queryParams)}`;
 }
 
-// 1. Endpoint api : /search/movie // 2. api_key & query => /search/movie?api_key=CLE_API&query=LA_RECHERCHE
+
 
 export function getApiUrl(path, queryParams = {}) {
     return getUrl(

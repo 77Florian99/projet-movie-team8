@@ -32,11 +32,7 @@ const styles = StyleSheet.create({
     main_information_container: {
         flexDirection: 'row'
     },
-    image: {
-        width: 80,
-        height: 120,
-        margin: 5,
-    },
+   
     title_text: {
         fontWeight: 'bold',
         fontSize: 16,

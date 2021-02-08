@@ -5,9 +5,19 @@ export function getGenre(searchText, page) {
         getApiUrl(
             `/genre/movie/list`,
             {
-                query: searchText,
                 language: 'fr-FR',
-                page: page
+            }
+        )
+    ).then(result => result.json());
+}
+
+export function getListGenre(searchText, page) {
+    return fetch(
+        getApiUrl(
+            `/discover/movie`,
+            {
+                language: 'fr-FR',
+                with_genres: 12,
             }
         )
     ).then(result => result.json());

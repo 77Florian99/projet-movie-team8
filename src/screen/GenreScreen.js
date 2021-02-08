@@ -3,7 +3,7 @@ import {View, FlatList, StyleSheet, SafeAreaView, ActivityIndicator} from "react
 import {getTopRated} from "../services/movie";
 import {FilmItem} from "../components/FilmItem";
 
-export const TopRatedScreen = (props) => {
+export const GenreScreen = (props) => {
     const [isLoading, setIsLoading] = useState(false)
     const [films, setFilms] = useState([])
 

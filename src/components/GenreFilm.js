@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image} from 'react-native';
 
-export const genreFilm = (props) => {
+export const GenreFilm = (props) => {
     const {genre} = props;
     return(
         <View style={styles.main_container}>

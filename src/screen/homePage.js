@@ -1,16 +1,16 @@
 import React from 'react';
 import {View, StyleSheet, Button} from "react-native";
-import {searchMovie} from "../services/movie";
-import {genre} from "../components/genre.js";
+import {getGenre} from "../services/movie";
+import {genreFilm} from "../components/GenreFilm.js";
 
 
-export const homePage = (props) => {
+export const HomePage = (props) => {
     const [isLoading, setIsLoading] = useState(false)
     const [films, setFilms] = useState([])
 
     useEffect(() => {
         setIsLoading(true);
-        getTopRated().then(data => {
+        getGenre().then(data => {
             setIsLoading(false);
             setFilms(data.results);
 
@@ -22,7 +22,7 @@ export const homePage = (props) => {
             <Fade>
                 <FlatList
                     data={films}
-                    renderItem={({item, index}) => <FilmItem
+                    renderItem={({item, index}) => <genreFilm
                         index={index}
                         film={item}
                         goToDetail={() => props.navigation.navigate('Detail', {title: item.title, id: item.id})}

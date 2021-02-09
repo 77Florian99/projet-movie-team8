@@ -22,3 +22,26 @@ export function getListGenre(searchText, page) {
         )
     ).then(result => result.json());
 }
+
+export function getMovie(id) {
+    return fetch(
+        getApiUrl(
+            `/movie/${id}`,
+            {
+                language: 'fr-FR'
+            }
+        )
+    ).then(result => result.json());
+}
+
+export function getDirecting(id) {
+    console.log(id)
+    return fetch(
+        getApiUrl(
+            `/movie/${id}/credits`,
+            {
+                language: 'fr-FR'
+            }
+        )
+    ).then(result => result.json());
+}

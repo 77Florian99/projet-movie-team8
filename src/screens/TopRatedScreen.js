@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react';
 import {View, FlatList, StyleSheet, SafeAreaView, ActivityIndicator} from "react-native";
-import {getListGenre} from "../services/movie";
+import {getTopRated} from "../services/movie";
 import {FilmItem} from "../components/FilmItem";
 
-export const GenreScreen = (props) => {
+export const TopRatedScreen = (props) => {
     const [isLoading, setIsLoading] = useState(false)
     const [films, setFilms] = useState([])
 
     useEffect(() => {
         setIsLoading(true);
-        getListGenre().then(data => {
+        getTopRated().then(data => {
             setIsLoading(false);
-            setFilms(data.with_genres);
+            setFilms(data.results);
 
         })
     }, [])

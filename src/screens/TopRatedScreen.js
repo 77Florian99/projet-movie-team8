@@ -1,15 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {View, FlatList, StyleSheet, SafeAreaView, ActivityIndicator} from "react-native";
-import {getTopRated} from "../services/movie";
+import {getListGenre, getDirecting, getMovie} from "../services/movie";
 import {FilmItem} from "../components/FilmItem";
 
-export const TopRatedScreen = (props) => {
+export const GenreScreen = (props) => {
+    // const {route, navigation} = props;
     const [isLoading, setIsLoading] = useState(false)
     const [films, setFilms] = useState([])
 
+    // useLayoutEffect(() => {
+    //     navigation.setOptions({
+    //         title: route && route.params && route.params.title ? route.params.title : 'Dernier film sorti'
+    //     })
+    // })
+    
     useEffect(() => {
         setIsLoading(true);
-        getTopRated().then(data => {
+        getListGenre().then(data => {
+            setIsLoading(false);
+            setFilms(data.results);
+
+        })
+        getDirecting().then(data => {
+            setIsLoading(false);
+            console.log(data)
+            
+
+        })
+        getListGenre().then(data => {
             setIsLoading(false);
             setFilms(data.results);
 
@@ -21,10 +39,11 @@ export const TopRatedScreen = (props) => {
             <View>
                 <FlatList
                     data={films}
-                    renderItem={({item}) => <FilmItem
+                    renderItem={({item, index}) => <FilmItem
+                        index={index}
                         film={item}
-                        goToDetail={() => props.navigation.navigate('Detail', {title: item.title, id: item.id})}
-                        screenName={props.route.name}
+                        // goToDetail={() => props.navigation.navigate('Detail', {title: item.title, id: item.id})}
+                        // screenName={props.route.name}
                     />}
                     keyExtractor={item => item.id.toString()}
                 />

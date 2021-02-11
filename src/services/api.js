@@ -1,4 +1,4 @@
-import { API_KEY, API_URL} from "../constants/api";
+import { API_KEY, API_URL} from "../constant/api";
 
 function getQueryString(queryParams) {
     // const obj = {param1: "value1", param2: 12}

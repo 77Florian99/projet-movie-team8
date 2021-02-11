@@ -1,9 +1,8 @@
 import React from 'react';
-import {HomePage} from "./src/screen/HomePage";
-import {GenreListScreen} from "./src/screen/GenreListScreen";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import {NavigationContainer} from "@react-navigation/native";
 import {HomeNavigator} from "./src/navigation/HomeNavigator";
+import {MainBottomNavigator} from "./src/navigation/MainBottomNavigator";
 
 
 export default function App() {

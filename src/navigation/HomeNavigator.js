@@ -6,7 +6,6 @@ import {DetailScreen} from "../screen/DetailScreen";
 import {MainBottomNavigator} from "../navigation/MainBottomNavigator";
 
 
-
 const Stack = createStackNavigator()
 
 export const HomeNavigator = () => {

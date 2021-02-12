@@ -5,9 +5,7 @@ export function searchMovie(searchText, page) {
         getApiUrl(
             `/search/movie`,
             {
-                query: searchText,
                 language: 'fr-FR',
-                page: page
             }
         )
     ).then(result => result.json());

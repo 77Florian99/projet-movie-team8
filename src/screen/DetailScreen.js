@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useState, useEffect} from 'react';
-import {Text, View, Image, StyleSheet, ScrollView, Button, Linking} from "react-native";
+import {Text, View, Image, StyleSheet, ScrollView, Button, Linking, TouchableOpacity} from "react-native";
 import {getMovie} from "../services/movie";
 
 export const DetailScreen = (props) => {
@@ -24,6 +24,7 @@ export const DetailScreen = (props) => {
                 } else {
                     console.log("Don't know how to open URI: " + movie.homepage);
                 }
+                console.log(movie.overview)
             });
         }
     }
@@ -50,7 +51,7 @@ export const DetailScreen = (props) => {
                             <View style={styles.headerInfoItems}>
                                 {movie.title && <Text style={styles.title}>{movie.title}</Text>}
                                 {movie.production_companies.length > 0 && <Text style={styles.director}>{movie.production_companies[0].name}</Text>}
-                                {movie.runtime > 0 && <Text style={styles.runtime}>{movie.runtime} minutes</Text>}
+                                {movie.runtime > 0 ? <Text style={styles.runtime}>{movie.runtime} minutes</Text> :[]}
                             </View>
                         </View>
                     </View>
@@ -58,9 +59,15 @@ export const DetailScreen = (props) => {
                     {movie.overview && <Text style={styles.overview}>{movie.overview}</Text>}
                 </View>
             </ScrollView>
+            
             {movie.homepage && (
                 <View style={styles.footer}>                      
-                    <Button color="rgb(253, 69, 86)" onPress={handlePress} title="Watch The Trailer !" />    
+                    <TouchableOpacity style={styles.btnTrailer} onPress={handlePress}> 
+
+                    <Text style={styles.txtBtn}>Trailer</Text>
+
+                    </TouchableOpacity>
+  
                 </View>
             )}
         </View>
@@ -139,16 +146,21 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         marginBottom: 25,
     },
-    footer: {
-        backgroundColor: "#ffffff",
-        bottom: 0,
-        left: 0,
-        paddingBottom: 12,
-        paddingLeft: 18,
-        paddingRight: 18,
-        paddingTop: 12,
-        position: "absolute",
-        right: 0,
-        zIndex: 2
+    txtBtn: {
+        color: "#FFFFFF",
+        textAlign: "center",
+        fontWeight: "bold",
     },
+    btnTrailer : {
+        backgroundColor:"#B00020",
+        height: 60,
+        borderTopRightRadius: 30,
+        borderTopLeftRadius: 30,
+        justifyContent: "center",
+        alignItems: "center"
+
+        
+
+    },
+    
 })

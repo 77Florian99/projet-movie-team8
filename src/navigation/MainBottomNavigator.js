@@ -9,8 +9,8 @@ const TabNavigator = createBottomTabNavigator();
 export const MainBottomNavigator = () => {
     return (
         <TabNavigator.Navigator initialRouteName="Home"
-        activeColor="#B5A90F"
-        inactiveColor="white"
+        activeColor='red'
+        inactiveColor='blue'
         labelStyle={{ fontSize: 12 }}
         barStyle={{ backgroundColor: '#B00020' }}>
             <TabNavigator.Screen name='Home' component={HomePage} options={{

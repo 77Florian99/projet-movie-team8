@@ -5,7 +5,9 @@ export function searchMovie(searchText, page) {
         getApiUrl(
             `/search/movie`,
             {
+                query: searchText,
                 language: 'fr-FR',
+                page: page
             }
         )
     ).then(result => result.json());
@@ -45,16 +47,6 @@ export function getMovie(id) {
     ).then(result => result.json());
 }
 
-export function getDirecting(id) {
-    console.log(id)
-    return fetch(
-        getApiUrl(
-            `/movie/${id}/credits`,
-            {
-                language: 'fr-FR'
-            }
-        )
-    ).then(result => result.json());
-}
+
 
 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useLayoutEffect} from 'react';
 import {View, FlatList, StyleSheet, SafeAreaView, ActivityIndicator} from "react-native";
-import {getListGenre, getDirecting, getMovie} from "../services/movie";
+import {getListGenre, getDirecting,} from "../services/movie";
 import {FilmItem} from "../components/FilmItem";
 
 export const GenreListScreen = (props) => {
@@ -22,12 +22,7 @@ export const GenreListScreen = (props) => {
             setFilms(data.results);
 
         })
-        getDirecting().then(data => {
-            setIsLoading(false);
-            console.log(data)
-            
-
-        })
+       
         getListGenre(route.params.id).then(data => {
             setIsLoading(false);
             setFilms(data.results);

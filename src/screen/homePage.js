@@ -24,7 +24,7 @@ export const HomePage = (props) => {
 
     return (
         <SafeAreaView style={styles.main_container}>
-            <View style={{ justifyContent:'center', alignContent:'center', flexDirection: 'row',}}>
+            <View style={{ justifyContent:'center', alignContent:'center', flexDirection: 'row', height: 370,}}>
             <Image style={styles.logo} source={require('../../assets/images/logo.png')}/>
             </View>
 
@@ -55,7 +55,6 @@ export const HomePage = (props) => {
 const styles = StyleSheet.create({
     main_container: {
         flex:1,
-        borderWidth: 3,
        
     },
    
@@ -65,9 +64,10 @@ const styles = StyleSheet.create({
     },
 
     logo:{
-        width: 200,
-        height: 200,
-        flex:1,
+        width: 300,
+        height: 300,
+        marginBottom:50,
+        marginTop:50,
         justifyContent:'center', alignContent:'center'
     },
     

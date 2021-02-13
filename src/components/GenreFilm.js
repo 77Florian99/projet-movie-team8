@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         backgroundColor: '#FFFFFF',
         marginBottom: 30, 
-        width: '45%',
+        width: '46%',
         
-        paddingVertical: 20,
-        paddingHorizontal: 30,
+        paddingVertical: 30,
+        paddingHorizontal: 20,
         shadowOpacity: 0.5,
         shadowRadius: 4,
         shadowColor:'#B00020',
@@ -49,7 +49,8 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         flexWrap: 'wrap',
-        color: 'red',
+        color: '#B00020',
+        textAlign: "center"
     },
 
     logo:{
